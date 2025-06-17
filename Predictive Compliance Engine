@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RiskCircuit | Predictive Compliance Engine</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="max-w-2xl mx-auto p-8">
+    <h1 class="text-4xl font-bold text-red-500 mb-6">RiskCircuit</h1>
+    <p class="mb-4 text-lg">Enter an Ethereum address to generate a predictive compliance risk profile, complete with entropy glyph and actionable audit results.</p><input id="walletInput" type="text" placeholder="0x..." class="w-full p-3 rounded text-black" />
+<button onclick="analyzeWallet()" class="mt-4 bg-red-600 hover:bg-red-700 px-6 py-3 rounded">Analyze</button>
+
+<div id="result" class="mt-10 space-y-4"></div>
+
+  </div>  <script>
+    async function analyzeWallet() {
+      const addr = document.getElementById('walletInput').value.trim();
+      const res = await fetch(`http://localhost:3001/analyze/${addr}`);
+      const data = await res.json();
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `
+        <h2 class="text-xl font-semibold text-green-400">Risk Score: ${data.overallRisk.score.toFixed(2)} / 100</h2>
+        <p class="text-yellow-300">${data.interpretation}</p>
+        <div class="mt-4">
+          <h3 class="text-lg font-bold">Entropy Glyph</h3>
+          <div class="mt-2" dangerouslySetInnerHTML={{ __html: data.visualizations.entropyGlyph }}></div>
+        </div>
+        <pre class="bg-gray-800 p-4 mt-4 rounded overflow-x-scroll text-sm">${JSON.stringify(data.components, null, 2)}</pre>`;
+}
+
+  </script>
+</body>
+</html>
