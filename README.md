@@ -38,6 +38,11 @@ Built for:
   - Freeze funds  
   - Flag for review  
   - Monitor new inbound txs
+ 
+  > Example Wallet: [`0x7c69a6...b28`](https://etherscan.io/address/0x7c69a6395b283347fce5b3b5a17277e49d6b7b28)  
+> - Entropy: 3.89  
+> - Risk Score: 91.2  
+> - Status: 🔴 Flagged (adjacency + mixer pattern)
 
 ---
 
