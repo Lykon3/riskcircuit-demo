@@ -1,3 +1,8 @@
+![Status](https://img.shields.io/badge/status-live-green)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Entropy Engine](https://img.shields.io/badge/entropy-analysis-critical-red)
+![Adjacency Coverage](https://img.shields.io/badge/hop-depth-3-lightgrey)
+
 # 🧠 RiskCircuit
 
 > ⚠️ **Predictive Compliance Engine for DeFi**  
