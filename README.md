@@ -1,3 +1,43 @@
+# 🧠 RiskCircuit
+
+🚨 **Secure On-Chain Behavior Detection**
+
+RiskCircuit is an open-source project designed to detect and analyze high-risk on-chain behavior using entropy, Bayesian methods, and chain-level adjacency patterns.
+
+## 🌐 What It Does
+
+- 🧠 Calculates entropy of wallet behavior
+- 🔍 Applies Bayesian models to detect signal
+- 🧬 Tracks wallet adjacency relationships
+- 🧠 Supports TornadoCash heuristics
+- 💥 Flags bridge-hopping, phishing, and mixer use
+
+## 🧪 Sample Output
+```json
+{
+  "wallet": "0x123...",
+  "entropy": 7.45,
+  "flags": ["tornadoCash", "bridgeHop", "suspiciousCluster"]
+}
+```
+
+## 📦 Stack
+
+- Node.js + Ethers.js
+- Tensorflow.js for entropy model
+- D3.js for graph exploration
+- GitHub Pages / Vercel for demo UI
+
+## 💻 Run It Locally
+```bash
+npm install
+npm start
+```
+
+---
+
+🤝 Built by: [@Lykon3](https://twitter.com/lykon3)
+
 ![Status](https://img.shields.io/badge/status-live-green)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Entropy Engine](https://img.shields.io/badge/entropy-analysis-critical-red)
